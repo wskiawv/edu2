@@ -35,9 +35,104 @@ CREATE TABLE `t_user` (
   `activateCode` varchar(300) DEFAULT NULL,
   `uuid` varchar(200) DEFAULT NULL,
   `userType` varchar(100) DEFAULT NULL,
+  `homeUrl` varchar(200) DEFAULT NULL,
+  `imageUrl` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_user
 -- ----------------------------
+-- ----------------------------
+-- Table structure for `t_role`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_role`;
+CREATE TABLE `t_role` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `code` varchar(255) DEFAULT NULL,
+  `create_date` datetime DEFAULT NULL,
+  `creation_by` int(20) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `remark` varchar(255) DEFAULT NULL,
+  `role_type` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `update_by` int(20) DEFAULT NULL,
+  `update_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for `t_user_role`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_user_role`;
+CREATE TABLE `t_user_role` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `roleId` int(20) DEFAULT NULL,
+  `userId` int(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+
+
+-- ----------------------------
+-- Table structure for `t_role_resources`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_role_resources`;
+CREATE TABLE `t_role_resources` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `resourcesId` int(20) DEFAULT NULL,
+  `roleId` int(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+-- ----------------------------
+-- Table structure for `t_menu`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_resources`;
+CREATE TABLE `t_resources` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `ctl` varchar(255) DEFAULT NULL,
+  `iconCls` varchar(255) DEFAULT NULL,
+  `leaf` bit(1) DEFAULT NULL,
+  `method` varchar(255) DEFAULT NULL,
+  `methodName` varchar(255) DEFAULT NULL,
+  `modules` varchar(255) DEFAULT NULL,
+  `modulesName` varchar(255) DEFAULT NULL,
+  `orderNum` int(11) DEFAULT NULL,
+  `qtip` varchar(255) DEFAULT NULL,
+  `text` varchar(255) DEFAULT NULL,
+  `url` varchar(255) DEFAULT NULL,
+  `xtype` varchar(255) DEFAULT NULL,
+  `pid` int(20) DEFAULT NULL,
+  `display` bit(1) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_gh3ryfwlwfbulr0tf6nv7lffq` (`pid`),
+  CONSTRAINT `FK_gh3ryfwlwfbulr0tf6nv7lffq` FOREIGN KEY (`pid`) REFERENCES `t_menu` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=342 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for `t_flatcode`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_flatcode`;
+CREATE TABLE `t_flatcode` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `category` varchar(255) DEFAULT NULL,
+  `categoryName` varchar(255) DEFAULT NULL,
+  `code` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3873 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for `t_class`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_classes`;
+CREATE TABLE `t_classes` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `bh` varchar(255) DEFAULT NULL,
+  `bjmc` varchar(255) DEFAULT NULL,
+  `jbny` varchar(255) DEFAULT NULL,
+  `schoolId` int(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
