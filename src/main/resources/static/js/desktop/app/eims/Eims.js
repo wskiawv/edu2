@@ -22,34 +22,57 @@ Ext.define('desktop.app.eims.Eims',{
     
 	createWindow : function(){
     	var me=this,desktop = this.app.getDesktop();
-    	var tabpanel=Ext.getCmp('mainTab');
-    	var westpanel=Ext.getCmp('westPanel');
-    	if(!tabpanel){
-    		tabpanel=Ext.create('desktop.app.comm.CenterTabPanel');
-    		//return tabpanel;
-    	}
-    	if(!westpanel)
-    	{
-    		westpanel=Ext.create('desktop.app.comm.WestPanel');
-       	}
         var win = desktop.getWindow(me.id);
+        var eimsMenu=null;
         if(!win){
         	win = desktop.createWindow({
         		id:me.id,
         		title:'教育信息管理系统',
-                width:740,
-                height:480,
+                width:800,
+                height:500,
                 iconCls: 'icon-grid',
                 animCollapse:false,
                 constrainHeader:true,
-                layout:'border'
-               // items:[{xtype:'WestPanel'}]
-             	//items:[me.getWestPanel(),me.getTabPanel()]
-              //  items:[{xtype:'CenterTabPanel'}]
+                layout:'border',
+                items:[{
+	                	xtype:'WestPanel',
+	                	menus:eimsMenu
+                	},{
+                	xtype:'CenterTabPanel'
+                }]
+
         	});
+        	win.on({
+                beforeshow:function(w){
+                    var url=appPath+"/sys/Resourceses/getMenu";
+                    var params={};
+                    Ext.Ajax.request({
+                        url: url,
+                        params:params,
+                        success: function(response){
+                            var text = response.responseText;
+                            var result=Ext.decode(text);
+                            if(result.success){
+                                eimsMenu=result.result.eims;
+                                Ext.example.msg("温馨提示","菜单加载成功！");
+                            }else{
+                                Ext.example.msg("温馨提示","菜单加载失败！");
+                            }
+
+                        },
+                        failure:function(){
+                           Ext.example.msg('温馨提醒',"服务端错误，菜单加载失败！");
+                          // wait.close();
+                        }
+                    });
+                },
+                beforerender:function(w){
+
+                },
+                scope:this
+            });
         }
-       	win.add(westpanel,tabpanel);
-       	
+        win.show();
         return win;
     }
 });

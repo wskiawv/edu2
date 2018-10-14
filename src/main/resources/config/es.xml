@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menus isUpdateMenus="false">		
+	<menu text="题库管理">
+		<meun text="题目信息" xtype="QuestionsLibInfo" ctl="examination.questions.QuestionsLibInfos"/>
+		<menu text="题目类型" xtype="QuestionsType" ctl="examination.questions.QuestionsTypes"/>
+	</menu>	
+	<menu text="考试管理">
+		<menu text="考试班级信息" xtype="ExaminationClass" ctl="examination.examinationmanagement.ExaminationClasses"/>
+		<menu text="考试信息" xtype="ExaminationInfo" ctl="examination.examinationmanagement.ExaminationInfos"/>
+		<menu text="试卷信息" xtype="ExaminationPaper" ctl="examination.examinationmanagement.ExaminationPapers"/>
+		<menu text="试卷题目" xtype="PaperQuestions" ctl="examination.examinationmanagement.PaperQuestionses"/>
+		<menu text="考场信息" xtype="ExaminationRoom" ctl="examination.examinationmanagement.ExaminationRooms"/>
+		<menu text="学生试卷作答信息" xtype="StudentPaperAnswer" ctl="examination.examinationmanagement.StudentPaperAnswers"/>
+	</menu>
+	<menu text="成绩管理">
+		<menu text="成绩信息" xtype="AchievementInfo" ctl="examination.achievementmanagement.AchievementInfos"/>
+	</menu>
+</menus>

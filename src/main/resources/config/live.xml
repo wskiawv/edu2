@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menus isUpdateMenus="false">		
+	<menu text="直播管理系统">
+		<meun text="直播频道" xtype="LiveChannel" ctl="live.Lives"/>
+		<meun text="直播" xtype="LiveStream" ctl="live.Lives"/>
+		<meun text="流媒体服务器配置" xtype="StreamingMediaServer" ctl="live.StreamingMediaServer"/>		
+	</menu>		
+</menus>

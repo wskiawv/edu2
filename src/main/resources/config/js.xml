@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<javascripts>
+<js type="text/javascript" src="js/customer/js/jquery-1.11.1.min.js"></js>
+<js type="text/javascript" src="js/desktop/ext/include-ext.js"></js> 
+<js type="text/javascript" src="js/desktop/ext/options-toolbar.js"></js>
+<js type="text/javascript" src="js/desktop/ext/ext-lang-zh_CN.js"></js>
+<js type="text/javascript" src="js/desktop/ext/examples.js"></js>
+<js type="text/javascript" src="js/desktop/ext/src/ux/IFrame.js"></js>
+<js type="text/javascript" src="js/desktop/js/ShortcutModel.js"></js>
+<js type="text/javascript" src="js/desktop/js/StartMenu.js"></js>
+<js type="text/javascript" src="js/desktop/js/TaskBar.js"></js>
+<js type="text/javascript" src="js/desktop/js/Desktop.js"></js>
+<js type="text/javascript" src="js/desktop/js/App.js"></js>
+<js type="text/javascript" src="js/desktop/ext/src/ux/upload/plupload/js/plupload.js"></js>
+<js type="text/javascript" src="js/desktop/ext/src/ux/upload/plupload/js/plupload.html4.js"></js>
+<js type="text/javascript" src="js/desktop/ext/src/ux/upload/plupload/js/plupload.html5.js"></js>
+<js type="text/javascript" src="js/desktop/ext/src/ux/upload/plupload/js/plupload.flash.js"></js>
+<js type="text/javascript" src="js/desktop/ext/src/ux/upload/plupload/js/plupload.silverlight.js"></js>
+<js type="text/javascript" src="js/desktop/ext/src/ux/upload/plugin/Window.js"></js>
+<js type="text/javascript" src="js/desktop/ext/src/ux/upload/Button.js"></js>   
+<js type="text/javascript" src="js/desktop/plugins/flash/swfobject.js"></js>
+<js type="text/javascript" src="js/desktop/js/Module.js"></js>
+<js type="text/javascript" src="js/desktop/js/Video.js"></js>
+<js type="text/javascript" src="js/desktop/js/Audio.js"></js>
+<js type="text/javascript" src="js/desktop/js/Wallpaper.js"></js>   
+<js type="text/javascript" src="js/desktop/ext/src/ux/TabCloseMenu.js"></js>
+<js type="text/javascript" src="js/desktop/AccordionWindow.js"></js>    
+<js type="text/javascript" src="js/desktop/GridWindow.js"></js>
+<!-- <js type="text/javascript" src="js/desktop/app/desktop.min.js"></js> -->
+<js type="text/javascript" src="js/desktop/app/comm/Paging.js"></js>
+<js type="text/javascript" src="js/desktop/app/comm/TimePickerField.js"></js>
+<js type="text/javascript" src="js/desktop/app/comm/DateTimePicker.js"></js>
+<js type="text/javascript" src="js/desktop/app/comm/DateTimeField.js"></js>
+<js type="text/javascript" src="js/desktop/app/comm/GridJsonStore.js"></js>
+<js type="text/javascript" src="js/desktop/app/comm/Msg.js"></js>
+<js type="text/javascript" src="js/desktop/app/comm/CommButton.js"></js>
+<js type="text/javascript" src="js/desktop/app/comm/CenterGrid.js"></js>
+<js type="text/javascript" src="js/desktop/app/comm/SearchPanel.js"></js>
+<js type="text/javascript" src="js/desktop/app/comm/CommWindow.js"></js>
+<js type="text/javascript" src="js/desktop/app/comm/CenterTabPanel.js"></js>
+<js type="text/javascript" src="js/desktop/app/comm/WestTreePanel.js"></js>
+<js type="text/javascript" src="js/desktop/app/comm/WestPanel.js"></js>
+<js type="text/javascript" src="js/desktop/app/comm/RowExpanders.js"></js>
+<js type="text/javascript" src="js/desktop/app/comm/CommComboBox.js"></js>
+<js type="text/javascript" src="js/desktop/app/comm/CRUDPanel.js"></js>
+<js type="text/javascript" src="js/desktop/app/comm/CRUDRowEditPanel.js"></js>
+<js type="text/javascript" src="js/desktop/app/examination/achievementmanagement/AchievementInfo.js" modules="examination"></js>
+<js type="text/javascript" src="js/desktop/app/examination/examinationmanagement/ExaminationClass.js" modules="examination"></js>
+<js type="text/javascript" src="js/desktop/app/examination/examinationmanagement/ExaminationInfo.js" modules="examination"></js>
+<js type="text/javascript" src="js/desktop/app/examination/examinationmanagement/ExaminationPaper.js" modules="examination"></js>
+<js type="text/javascript" src="js/desktop/app/examination/examinationmanagement/ExaminationRoom.js" modules="examination"></js>
+<js type="text/javascript" src="js/desktop/app/examination/examinationmanagement/PaperQuestions.js" modules="examination"></js>
+<js type="text/javascript" src="js/desktop/app/examination/examinationmanagement/StudentPaperAnswer.js" modules="examination"></js>
+<js type="text/javascript" src="js/desktop/app/examination/questions/QuestionsLibInfo.js" modules="examination"></js>
+<js type="text/javascript" src="js/desktop/app/examination/questions/QuestionsType.js" modules="examination"></js>
+<js type="text/javascript" src="js/desktop/app/examination/ExaminationSystem.js" modules="examination"></js>
+<js type="text/javascript" src="js/desktop/app/eims/school/ResourcesBrowseWindow.js" modules="eims"></js>
+<js type="text/javascript" src="js/desktop/app/eims/school/CurriculumChapterSetting.js" modules="eims"></js>     
+<js type="text/javascript" src="js/desktop/app/eims/customer/Customer.js" modules="eims"></js>   
+<js type="text/javascript" src="js/desktop/app/eims/school/CurriculumDocument.js" modules="eims"></js> 
+<js type="text/javascript" src="js/desktop/app/eims/school/Curriculum.js" modules="eims"></js>
+<js type="text/javascript" src="js/desktop/app/eims/school/CurriculumResources.js" modules="eims"></js>
+<js type="text/javascript" src="js/desktop/app/eims/school/Major.js" modules="eims"></js>
+<js type="text/javascript" src="js/desktop/app/eims/school/School.js" modules="eims"></js>
+<js type="text/javascript" src="js/desktop/app/eims/school/CollegeDepartment.js" modules="eims"></js>
+<js type="text/javascript" src="js/desktop/app/eims/school/Department.js" modules="eims"></js>
+<js type="text/javascript" src="js/desktop/app/eims/school/Comment.js" modules="eims"></js>
+<js type="text/javascript" src="js/desktop/app/eims/school/ResourceComment.js" modules="eims"></js>
+<js type="text/javascript" src="js/desktop/app/eims/school/ResourceLibrary.js" modules="eims"></js>
+<js type="text/javascript" src="js/desktop/app/eims/student/Student.js" modules="eims"></js>
+<js type="text/javascript" src="js/desktop/app/eims/student/Class.js" modules="eims"></js>
+<js type="text/javascript" src="js/desktop/app/eims/Eims.js" modules="eims"></js>    
+<js type="text/javascript" src="js/desktop/app/eims/sys/AssignRole.js" modules="eims"></js>
+<js type="text/javascript" src="js/desktop/app/eims/sys/User.js" modules="eims"></js>
+<js type="text/javascript" src="js/desktop/app/eims/sys/Expenserecord.js" modules="eims"></js>
+<js type="text/javascript" src="js/desktop/app/eims/sys/FlatCode.js" modules="eims"></js>
+<js type="text/javascript" src="js/desktop/app/eims/sys/Menu.js" modules="eims"></js>
+<js type="text/javascript" src="js/desktop/app/eims/sys/RoleResources.js" modules="eims"></js>
+<js type="text/javascript" src="js/desktop/app/eims/sys/UserRole.js" modules="eims"></js>
+<js type="text/javascript" src="js/desktop/app/eims/sys/Resources.js" modules="eims"></js>
+<js type="text/javascript" src="js/desktop/app/eims/sys/SkyDrivePublic.js" modules="eims"></js>
+<js type="text/javascript" src="js/desktop/app/eims/sys/SkyDrivePersonal.js" modules="eims"></js>   
+<js type="text/javascript" src="js/desktop/app/sys/sys/Test.js" modules="eims"></js>
+<js type="text/javascript" src="js/desktop/app/eims/teacher/Teacher.js" modules="eims"></js>
+<js type="text/javascript" src="js/desktop/app/oa/oa.js" modules="oa"></js>
+<js type="text/javascript" src="js/desktop/app/oles/Oles.js" modules="oles"></js>
+<js type="text/javascript" src="js/desktop/app/live/StreamingMediaServer.js" modules="live"></js>
+<js type="text/javascript" src="js/desktop/app/live/LiveChannel.js" modules="live"></js>
+<js type="text/javascript" src="js/desktop/app/live/LiveStream.js" modules="live"></js>
+<js type="text/javascript" src="js/desktop/app/live/Live.js" modules="live"></js>
+<js type="text/javascript" src="js/desktop/app/filesys/FileSys.js" modules="live"></js>
+<js type="text/javascript" src="js/desktop/app/eims/sys/Role.js" modules="eims"></js>
+<js type="text/javascript" src="js/desktop/app/otherApp/DouBan.js" modules="live"></js>
+<js type="text/javascript" src="js/desktop/Notepad.js"></js>
+<js type="text/javascript" src="js/desktop/SystemStatus.js"></js>
+<js type="text/javascript" src="js/desktop/TabWindow.js"></js>
+<js type="text/javascript" src="js/desktop/VideoWindow.js"></js>
+<js type="text/javascript" src="js/desktop/AudioWindow.js"></js>
+<js type="text/javascript" src="js/desktop/SWFVideo.js"></js>
+<js type="text/javascript" src="js/desktop/BogusModule.js"></js>
+<js type="text/javascript" src="js/desktop/BogusMenuModule.js"></js>
+<js type="text/javascript" src="js/desktop/WallpaperModel.js"></js>  
+<js type="text/javascript" src="js/desktop/Settings.js"></js>            
+<js type="text/javascript" src="js/desktop/App.js"></js>
+</javascripts>

@@ -136,3 +136,80 @@ CREATE TABLE `t_classes` (
   `schoolId` int(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for `t_school`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_school`;
+CREATE TABLE `t_school` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `cjxyzk` varchar(255) DEFAULT NULL,
+  `czdh` varchar(255) DEFAULT NULL,
+  `dwfzr` varchar(255) DEFAULT NULL,
+  `dzxx` varchar(255) DEFAULT NULL,
+  `gcyxzk` varchar(255) DEFAULT NULL,
+  `jxny` varchar(255) DEFAULT NULL,
+  `lsyg` varchar(255) DEFAULT NULL,
+  `lxdh` varchar(255) DEFAULT NULL,
+  `wlxyzk` varchar(255) DEFAULT NULL,
+  `xkmls` int(11) DEFAULT NULL,
+  `xqr` varchar(255) DEFAULT NULL,
+  `xxbxlxm` varchar(255) DEFAULT NULL,
+  `xxdm` varchar(255) DEFAULT NULL,
+  `xxdz` varchar(255) DEFAULT NULL,
+  `xxjbzm` varchar(255) DEFAULT NULL,
+  `xxmc` varchar(255) DEFAULT NULL,
+  `xxqhm` varchar(255) DEFAULT NULL,
+  `xxxz` varchar(255) DEFAULT NULL,
+  `xxxzm` varchar(255) DEFAULT NULL,
+  `xxywmc` varchar(255) DEFAULT NULL,
+  `xxzgbmm` varchar(255) DEFAULT NULL,
+  `xxzgbmmc` varchar(255) DEFAULT NULL,
+  `yjsyzk` varchar(255) DEFAULT NULL,
+  `yzbm` varchar(255) DEFAULT NULL,
+  `zdyxzk` varchar(255) DEFAULT NULL,
+  `zydz` varchar(255) DEFAULT NULL,
+  `zzjgdm` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for `t_curriculum`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_curriculum`;
+CREATE TABLE `t_curriculum` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `charge` decimal(19,2) DEFAULT NULL,
+  `cover` varchar(255) DEFAULT NULL,
+  `kch` varchar(255) DEFAULT NULL,
+  `kcjj` varchar(255) DEFAULT NULL,
+  `kclbm` varchar(255) DEFAULT NULL,
+  `kcmc` varchar(255) DEFAULT NULL,
+  `kcyq` varchar(255) DEFAULT NULL,
+  `kcywmc` varchar(255) DEFAULT NULL,
+  `kkjssj` datetime DEFAULT NULL,
+  `kkkssj` datetime DEFAULT NULL,
+  `ksxnd` varchar(255) DEFAULT NULL,
+  `ksxqm` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `wsjxzk` varchar(255) DEFAULT NULL,
+  `xf` int(11) DEFAULT NULL,
+  `xs` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for `t_comment`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_comment`;
+CREATE TABLE `t_comment` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `content` varchar(255) DEFAULT NULL,
+  `curriculumId` bigint(20) DEFAULT NULL,
+  `datetime` datetime DEFAULT NULL,
+  `star` bigint(20) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `userid` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

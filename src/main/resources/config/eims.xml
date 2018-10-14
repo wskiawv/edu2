@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menus isUpdateMenus="false">		
+	<menu text="学校管理">
+		<meun text="学校基本信息管理" xtype="School" ctl="school.Schools"/>
+		<meun text="院系设置" xtype="CollegeDepartment" ctl="school.CollegeDepartments"/>
+		<meun text="科室设置" xtype="Department" ctl="school.Departments"/>
+		<meun text="专业设置" xtype="Major" ctl="school.Majors"/>
+		<meun text="课程设置" xtype="Curriculum" ctl="school.Curriculums"/>
+		<meun text="课程资源管理" xtype="CurriculumResources" ctl="school.CurriculumResourceses"/>
+		<meun text="课程评论" xtype="Comment" ctl="school.Comments"/>
+	</menu>	
+	<menu text="教师管理">
+		<menu text="教师管理" xtype="Teacher" ctl="teacher.Teachers"/>				
+	</menu>
+	<menu text="学生管理">
+		<menu text="班级管理" xtype="Classes" ctl="student.Classes"/>		
+		<menu text="学生基本信息管理" xtype="Student" ctl="student.Students"/>	
+	</menu>
+	<menu text="系统管理">		
+		<menu text="资源管理" xtype="Resources" ctl="sys.Resourceses"/>
+		<menu text="扣费记录" xtype="Expenserecord" ctl="sys.Expenserecords"/>
+		<menu text="用户管理" xtype="User" ctl="sys.Users"/>
+		<menu text="角色管理" xtype="Role" ctl="sys.Roles"/>
+		<menu text="角色资源管理" xtype="RoleResources" ctl="sys.RoleResourceses"/>
+		<menu text="用户角色" xtype="UserRole" ctl="sys.UserRoles"/>
+		<menu text="系统菜单管理" xtype="Menu" ctl="sys.Menus"/>
+		<menu text="系统代码管理" xtype="FlatCode" ctl="sys.Resourceses"/>
+	</menu>
+</menus>

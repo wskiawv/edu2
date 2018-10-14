@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menus isUpdateMenus="false">
+	<menu text="考勤管理">
+		<menu text="签到" xtype="Teacher" ctl="teacher.Teachers"/>
+	</menu>
+	<menu text="用车管理">
+		<menu text="车辆信息" xtype="Classes" ctl="student.Classes"/>
+	</menu>
+</menus>

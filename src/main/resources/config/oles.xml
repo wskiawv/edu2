@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menus isUpdateMenus="false">
+	<menu text="客户管理">
+		<meun text="客户信息管理" xtype="Customer" ctl="customer.Customers"/>
+	</menu>	
+	<menu text="订单管理">
+		<menu text="订单查询" xtype="Resources" ctl="sys.Resourceses"/>
+	</menu>
+	<menu text="资源库管理">
+		<menu text="资源库信息" xtype="ResourceLibrary" ctl="school.ResourceLibraries"/>
+		<menu text="资源评论信息" xtype="ResourceComment" ctl="school.ResourceComments"/>
+	</menu>
+</menus>

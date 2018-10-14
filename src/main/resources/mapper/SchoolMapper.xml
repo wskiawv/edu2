@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.szlhsoft.dao.SchoolMapper" >
+  <resultMap id="BaseResultMap" type="com.szlhsoft.model.School" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="cjxyzk" property="cjxyzk" jdbcType="VARCHAR" />
+    <result column="czdh" property="czdh" jdbcType="VARCHAR" />
+    <result column="dwfzr" property="dwfzr" jdbcType="VARCHAR" />
+    <result column="dzxx" property="dzxx" jdbcType="VARCHAR" />
+    <result column="gcyxzk" property="gcyxzk" jdbcType="VARCHAR" />
+    <result column="jxny" property="jxny" jdbcType="VARCHAR" />
+    <result column="lsyg" property="lsyg" jdbcType="VARCHAR" />
+    <result column="lxdh" property="lxdh" jdbcType="VARCHAR" />
+    <result column="wlxyzk" property="wlxyzk" jdbcType="VARCHAR" />
+    <result column="xkmls" property="xkmls" jdbcType="INTEGER" />
+    <result column="xqr" property="xqr" jdbcType="VARCHAR" />
+    <result column="xxbxlxm" property="xxbxlxm" jdbcType="VARCHAR" />
+    <result column="xxdm" property="xxdm" jdbcType="VARCHAR" />
+    <result column="xxdz" property="xxdz" jdbcType="VARCHAR" />
+    <result column="xxjbzm" property="xxjbzm" jdbcType="VARCHAR" />
+    <result column="xxmc" property="xxmc" jdbcType="VARCHAR" />
+    <result column="xxqhm" property="xxqhm" jdbcType="VARCHAR" />
+    <result column="xxxz" property="xxxz" jdbcType="VARCHAR" />
+    <result column="xxxzm" property="xxxzm" jdbcType="VARCHAR" />
+    <result column="xxywmc" property="xxywmc" jdbcType="VARCHAR" />
+    <result column="xxzgbmm" property="xxzgbmm" jdbcType="VARCHAR" />
+    <result column="xxzgbmmc" property="xxzgbmmc" jdbcType="VARCHAR" />
+    <result column="yjsyzk" property="yjsyzk" jdbcType="VARCHAR" />
+    <result column="yzbm" property="yzbm" jdbcType="VARCHAR" />
+    <result column="zdyxzk" property="zdyxzk" jdbcType="VARCHAR" />
+    <result column="zydz" property="zydz" jdbcType="VARCHAR" />
+    <result column="zzjgdm" property="zzjgdm" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, cjxyzk, czdh, dwfzr, dzxx, gcyxzk, jxny, lsyg, lxdh, wlxyzk, xkmls, xqr, xxbxlxm, 
+    xxdm, xxdz, xxjbzm, xxmc, xxqhm, xxxz, xxxzm, xxywmc, xxzgbmm, xxzgbmmc, yjsyzk, 
+    yzbm, zdyxzk, zydz, zzjgdm
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_school
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_school
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.szlhsoft.model.School" >
+    insert into t_school (id, cjxyzk, czdh, 
+      dwfzr, dzxx, gcyxzk, 
+      jxny, lsyg, lxdh, wlxyzk, 
+      xkmls, xqr, xxbxlxm, 
+      xxdm, xxdz, xxjbzm, 
+      xxmc, xxqhm, xxxz, 
+      xxxzm, xxywmc, xxzgbmm, 
+      xxzgbmmc, yjsyzk, yzbm, 
+      zdyxzk, zydz, zzjgdm
+      )
+    values (#{id,jdbcType=INTEGER}, #{cjxyzk,jdbcType=VARCHAR}, #{czdh,jdbcType=VARCHAR}, 
+      #{dwfzr,jdbcType=VARCHAR}, #{dzxx,jdbcType=VARCHAR}, #{gcyxzk,jdbcType=VARCHAR}, 
+      #{jxny,jdbcType=VARCHAR}, #{lsyg,jdbcType=VARCHAR}, #{lxdh,jdbcType=VARCHAR}, #{wlxyzk,jdbcType=VARCHAR}, 
+      #{xkmls,jdbcType=INTEGER}, #{xqr,jdbcType=VARCHAR}, #{xxbxlxm,jdbcType=VARCHAR}, 
+      #{xxdm,jdbcType=VARCHAR}, #{xxdz,jdbcType=VARCHAR}, #{xxjbzm,jdbcType=VARCHAR}, 
+      #{xxmc,jdbcType=VARCHAR}, #{xxqhm,jdbcType=VARCHAR}, #{xxxz,jdbcType=VARCHAR}, 
+      #{xxxzm,jdbcType=VARCHAR}, #{xxywmc,jdbcType=VARCHAR}, #{xxzgbmm,jdbcType=VARCHAR}, 
+      #{xxzgbmmc,jdbcType=VARCHAR}, #{yjsyzk,jdbcType=VARCHAR}, #{yzbm,jdbcType=VARCHAR}, 
+      #{zdyxzk,jdbcType=VARCHAR}, #{zydz,jdbcType=VARCHAR}, #{zzjgdm,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.szlhsoft.model.School" >
+    insert into t_school
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="cjxyzk != null" >
+        cjxyzk,
+      </if>
+      <if test="czdh != null" >
+        czdh,
+      </if>
+      <if test="dwfzr != null" >
+        dwfzr,
+      </if>
+      <if test="dzxx != null" >
+        dzxx,
+      </if>
+      <if test="gcyxzk != null" >
+        gcyxzk,
+      </if>
+      <if test="jxny != null" >
+        jxny,
+      </if>
+      <if test="lsyg != null" >
+        lsyg,
+      </if>
+      <if test="lxdh != null" >
+        lxdh,
+      </if>
+      <if test="wlxyzk != null" >
+        wlxyzk,
+      </if>
+      <if test="xkmls != null" >
+        xkmls,
+      </if>
+      <if test="xqr != null" >
+        xqr,
+      </if>
+      <if test="xxbxlxm != null" >
+        xxbxlxm,
+      </if>
+      <if test="xxdm != null" >
+        xxdm,
+      </if>
+      <if test="xxdz != null" >
+        xxdz,
+      </if>
+      <if test="xxjbzm != null" >
+        xxjbzm,
+      </if>
+      <if test="xxmc != null" >
+        xxmc,
+      </if>
+      <if test="xxqhm != null" >
+        xxqhm,
+      </if>
+      <if test="xxxz != null" >
+        xxxz,
+      </if>
+      <if test="xxxzm != null" >
+        xxxzm,
+      </if>
+      <if test="xxywmc != null" >
+        xxywmc,
+      </if>
+      <if test="xxzgbmm != null" >
+        xxzgbmm,
+      </if>
+      <if test="xxzgbmmc != null" >
+        xxzgbmmc,
+      </if>
+      <if test="yjsyzk != null" >
+        yjsyzk,
+      </if>
+      <if test="yzbm != null" >
+        yzbm,
+      </if>
+      <if test="zdyxzk != null" >
+        zdyxzk,
+      </if>
+      <if test="zydz != null" >
+        zydz,
+      </if>
+      <if test="zzjgdm != null" >
+        zzjgdm,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="cjxyzk != null" >
+        #{cjxyzk,jdbcType=VARCHAR},
+      </if>
+      <if test="czdh != null" >
+        #{czdh,jdbcType=VARCHAR},
+      </if>
+      <if test="dwfzr != null" >
+        #{dwfzr,jdbcType=VARCHAR},
+      </if>
+      <if test="dzxx != null" >
+        #{dzxx,jdbcType=VARCHAR},
+      </if>
+      <if test="gcyxzk != null" >
+        #{gcyxzk,jdbcType=VARCHAR},
+      </if>
+      <if test="jxny != null" >
+        #{jxny,jdbcType=VARCHAR},
+      </if>
+      <if test="lsyg != null" >
+        #{lsyg,jdbcType=VARCHAR},
+      </if>
+      <if test="lxdh != null" >
+        #{lxdh,jdbcType=VARCHAR},
+      </if>
+      <if test="wlxyzk != null" >
+        #{wlxyzk,jdbcType=VARCHAR},
+      </if>
+      <if test="xkmls != null" >
+        #{xkmls,jdbcType=INTEGER},
+      </if>
+      <if test="xqr != null" >
+        #{xqr,jdbcType=VARCHAR},
+      </if>
+      <if test="xxbxlxm != null" >
+        #{xxbxlxm,jdbcType=VARCHAR},
+      </if>
+      <if test="xxdm != null" >
+        #{xxdm,jdbcType=VARCHAR},
+      </if>
+      <if test="xxdz != null" >
+        #{xxdz,jdbcType=VARCHAR},
+      </if>
+      <if test="xxjbzm != null" >
+        #{xxjbzm,jdbcType=VARCHAR},
+      </if>
+      <if test="xxmc != null" >
+        #{xxmc,jdbcType=VARCHAR},
+      </if>
+      <if test="xxqhm != null" >
+        #{xxqhm,jdbcType=VARCHAR},
+      </if>
+      <if test="xxxz != null" >
+        #{xxxz,jdbcType=VARCHAR},
+      </if>
+      <if test="xxxzm != null" >
+        #{xxxzm,jdbcType=VARCHAR},
+      </if>
+      <if test="xxywmc != null" >
+        #{xxywmc,jdbcType=VARCHAR},
+      </if>
+      <if test="xxzgbmm != null" >
+        #{xxzgbmm,jdbcType=VARCHAR},
+      </if>
+      <if test="xxzgbmmc != null" >
+        #{xxzgbmmc,jdbcType=VARCHAR},
+      </if>
+      <if test="yjsyzk != null" >
+        #{yjsyzk,jdbcType=VARCHAR},
+      </if>
+      <if test="yzbm != null" >
+        #{yzbm,jdbcType=VARCHAR},
+      </if>
+      <if test="zdyxzk != null" >
+        #{zdyxzk,jdbcType=VARCHAR},
+      </if>
+      <if test="zydz != null" >
+        #{zydz,jdbcType=VARCHAR},
+      </if>
+      <if test="zzjgdm != null" >
+        #{zzjgdm,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.szlhsoft.model.School" >
+    update t_school
+    <set >
+      <if test="cjxyzk != null" >
+        cjxyzk = #{cjxyzk,jdbcType=VARCHAR},
+      </if>
+      <if test="czdh != null" >
+        czdh = #{czdh,jdbcType=VARCHAR},
+      </if>
+      <if test="dwfzr != null" >
+        dwfzr = #{dwfzr,jdbcType=VARCHAR},
+      </if>
+      <if test="dzxx != null" >
+        dzxx = #{dzxx,jdbcType=VARCHAR},
+      </if>
+      <if test="gcyxzk != null" >
+        gcyxzk = #{gcyxzk,jdbcType=VARCHAR},
+      </if>
+      <if test="jxny != null" >
+        jxny = #{jxny,jdbcType=VARCHAR},
+      </if>
+      <if test="lsyg != null" >
+        lsyg = #{lsyg,jdbcType=VARCHAR},
+      </if>
+      <if test="lxdh != null" >
+        lxdh = #{lxdh,jdbcType=VARCHAR},
+      </if>
+      <if test="wlxyzk != null" >
+        wlxyzk = #{wlxyzk,jdbcType=VARCHAR},
+      </if>
+      <if test="xkmls != null" >
+        xkmls = #{xkmls,jdbcType=INTEGER},
+      </if>
+      <if test="xqr != null" >
+        xqr = #{xqr,jdbcType=VARCHAR},
+      </if>
+      <if test="xxbxlxm != null" >
+        xxbxlxm = #{xxbxlxm,jdbcType=VARCHAR},
+      </if>
+      <if test="xxdm != null" >
+        xxdm = #{xxdm,jdbcType=VARCHAR},
+      </if>
+      <if test="xxdz != null" >
+        xxdz = #{xxdz,jdbcType=VARCHAR},
+      </if>
+      <if test="xxjbzm != null" >
+        xxjbzm = #{xxjbzm,jdbcType=VARCHAR},
+      </if>
+      <if test="xxmc != null" >
+        xxmc = #{xxmc,jdbcType=VARCHAR},
+      </if>
+      <if test="xxqhm != null" >
+        xxqhm = #{xxqhm,jdbcType=VARCHAR},
+      </if>
+      <if test="xxxz != null" >
+        xxxz = #{xxxz,jdbcType=VARCHAR},
+      </if>
+      <if test="xxxzm != null" >
+        xxxzm = #{xxxzm,jdbcType=VARCHAR},
+      </if>
+      <if test="xxywmc != null" >
+        xxywmc = #{xxywmc,jdbcType=VARCHAR},
+      </if>
+      <if test="xxzgbmm != null" >
+        xxzgbmm = #{xxzgbmm,jdbcType=VARCHAR},
+      </if>
+      <if test="xxzgbmmc != null" >
+        xxzgbmmc = #{xxzgbmmc,jdbcType=VARCHAR},
+      </if>
+      <if test="yjsyzk != null" >
+        yjsyzk = #{yjsyzk,jdbcType=VARCHAR},
+      </if>
+      <if test="yzbm != null" >
+        yzbm = #{yzbm,jdbcType=VARCHAR},
+      </if>
+      <if test="zdyxzk != null" >
+        zdyxzk = #{zdyxzk,jdbcType=VARCHAR},
+      </if>
+      <if test="zydz != null" >
+        zydz = #{zydz,jdbcType=VARCHAR},
+      </if>
+      <if test="zzjgdm != null" >
+        zzjgdm = #{zzjgdm,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.szlhsoft.model.School" >
+    update t_school
+    set cjxyzk = #{cjxyzk,jdbcType=VARCHAR},
+      czdh = #{czdh,jdbcType=VARCHAR},
+      dwfzr = #{dwfzr,jdbcType=VARCHAR},
+      dzxx = #{dzxx,jdbcType=VARCHAR},
+      gcyxzk = #{gcyxzk,jdbcType=VARCHAR},
+      jxny = #{jxny,jdbcType=VARCHAR},
+      lsyg = #{lsyg,jdbcType=VARCHAR},
+      lxdh = #{lxdh,jdbcType=VARCHAR},
+      wlxyzk = #{wlxyzk,jdbcType=VARCHAR},
+      xkmls = #{xkmls,jdbcType=INTEGER},
+      xqr = #{xqr,jdbcType=VARCHAR},
+      xxbxlxm = #{xxbxlxm,jdbcType=VARCHAR},
+      xxdm = #{xxdm,jdbcType=VARCHAR},
+      xxdz = #{xxdz,jdbcType=VARCHAR},
+      xxjbzm = #{xxjbzm,jdbcType=VARCHAR},
+      xxmc = #{xxmc,jdbcType=VARCHAR},
+      xxqhm = #{xxqhm,jdbcType=VARCHAR},
+      xxxz = #{xxxz,jdbcType=VARCHAR},
+      xxxzm = #{xxxzm,jdbcType=VARCHAR},
+      xxywmc = #{xxywmc,jdbcType=VARCHAR},
+      xxzgbmm = #{xxzgbmm,jdbcType=VARCHAR},
+      xxzgbmmc = #{xxzgbmmc,jdbcType=VARCHAR},
+      yjsyzk = #{yjsyzk,jdbcType=VARCHAR},
+      yzbm = #{yzbm,jdbcType=VARCHAR},
+      zdyxzk = #{zdyxzk,jdbcType=VARCHAR},
+      zydz = #{zydz,jdbcType=VARCHAR},
+      zzjgdm = #{zzjgdm,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

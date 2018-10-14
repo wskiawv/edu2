@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.szlhsoft.dao.sys.ResourcesDaoI" >
+    <resultMap id="Menu" type="com.webank.hec.model.sys.Resources" >
+        <result column="MENU_ID" property="menuId" jdbcType="DECIMAL" />
+        <result column="ICONCLS" property="iconcls" jdbcType="VARCHAR" />
+        <result column="LEAF" property="leaf" jdbcType="DECIMAL" />
+        <result column="MODULES" property="modules" jdbcType="VARCHAR" />
+        <result column="ORDERNUM" property="ordernum" jdbcType="DECIMAL" />
+        <result column="QTIP" property="qtip" jdbcType="VARCHAR" />
+        <result column="TEXT" property="text" jdbcType="VARCHAR" />
+        <result column="XTYPE" property="xtype" jdbcType="VARCHAR" />
+        <result column="PID" property="pid" jdbcType="DECIMAL" />
+        <result column="CTL" property="ctl" jdbcType="VARCHAR" />
+        <result column="METHODNAME" property="methodname" jdbcType="VARCHAR" />
+        <result column="METHODDESC" property="methoddesc" jdbcType="VARCHAR" />
+        <result column="MODULESNAME" property="modulesname" jdbcType="VARCHAR" />
+        <result column="URL" property="url" jdbcType="VARCHAR" />
+        <result column="display" property="display" jdbcType="DECIMAL" />
+    </resultMap>
+    <insert id="insert" parameterType="com.szlhsoft.model.sys.Resources" >
+        <selectKey resultType="Long" keyProperty="menuId" order="BEFORE">select T_MENU_S.nextval from dual</selectKey>
+        insert into t_resources (MENU_ID, ICONCLS, LEAF,
+        MODULES, ORDERNUM, QTIP,
+        TEXT, XTYPE, PID, CTL,
+        METHODNAME, METHODDESC, MODULESNAME,
+        URL,display)
+        values (#{menuId,jdbcType=DECIMAL}, #{iconcls,jdbcType=VARCHAR}, #{leaf,jdbcType=DECIMAL},
+        #{modules,jdbcType=VARCHAR}, #{ordernum,jdbcType=DECIMAL}, #{qtip,jdbcType=VARCHAR},
+        #{text,jdbcType=VARCHAR}, #{xtype,jdbcType=VARCHAR}, #{pid,jdbcType=DECIMAL}, #{ctl,jdbcType=VARCHAR},
+        #{methodname,jdbcType=VARCHAR}, #{methoddesc,jdbcType=VARCHAR}, #{modulesname,jdbcType=VARCHAR},
+        #{url,jdbcType=VARCHAR},#{display,jdbcType=DECIMAL},)
+    </insert>
+    <insert id="insertSelective" parameterType="com.szlhsoft.model.sys.Resources">
+        <selectKey resultType="Long" keyProperty="menuId" order="BEFORE">select t_resources_S.nextval from dual</selectKey>
+        insert into t_resources
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            MENU_ID,
+            <if test="iconcls != null" >
+                ICONCLS,
+            </if>
+            <if test="leaf != null" >
+                LEAF,
+            </if>
+            <if test="modules != null" >
+                MODULES,
+            </if>
+            <if test="ordernum != null" >
+                ORDERNUM,
+            </if>
+            <if test="qtip != null" >
+                QTIP,
+            </if>
+            <if test="text != null" >
+                TEXT,
+            </if>
+            <if test="xtype != null" >
+                XTYPE,
+            </if>
+            <if test="pid != null" >
+                PID,
+            </if>
+            <if test="ctl != null" >
+                CTL,
+            </if>
+            <if test="methodname != null" >
+                METHODNAME,
+            </if>
+            <if test="methoddesc != null" >
+                METHODDESC,
+            </if>
+            <if test="modulesname != null" >
+                MODULESNAME,
+            </if>
+            <if test="url != null" >
+                URL,
+            </if>
+            <if test="display != null" >
+                display,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+
+            #{menuId},
+
+            <if test="iconcls != null" >
+                #{iconcls,jdbcType=VARCHAR},
+            </if>
+            <if test="leaf != null" >
+                #{leaf,jdbcType=DECIMAL},
+            </if>
+            <if test="modules != null" >
+                #{modules,jdbcType=VARCHAR},
+            </if>
+            <if test="ordernum != null" >
+                #{ordernum,jdbcType=DECIMAL},
+            </if>
+            <if test="qtip != null" >
+                #{qtip,jdbcType=VARCHAR},
+            </if>
+            <if test="text != null" >
+                #{text,jdbcType=VARCHAR},
+            </if>
+            <if test="xtype != null" >
+                #{xtype,jdbcType=VARCHAR},
+            </if>
+            <if test="pid != null" >
+                #{pid,jdbcType=DECIMAL},
+            </if>
+            <if test="ctl != null" >
+                #{ctl,jdbcType=VARCHAR},
+            </if>
+            <if test="methodname != null" >
+                #{methodname,jdbcType=VARCHAR},
+            </if>
+            <if test="methoddesc != null" >
+                #{methoddesc,jdbcType=VARCHAR},
+            </if>
+            <if test="modulesname != null" >
+                #{modulesname,jdbcType=VARCHAR},
+            </if>
+            <if test="url != null" >
+                #{url,jdbcType=VARCHAR},
+            </if>
+            <if test="display != null" >
+                #{display,jdbcType=DECIMAL},
+            </if>
+        </trim>
+    </insert>
+    <delete id="delete" parameterType="Long">
+        delete t_resources where menu_id=#{id,jdbcType=DECIMAL}
+    </delete>
+    <delete id="deleteAll">
+        delete t_resources
+    </delete>
+    <select id="select" parameterType="String" resultMap="Menu">
+        select * from t_resources where MODULES=#{name,jdbcType=VARCHAR} and METHODNAME is null
+    </select>
+</mapper>

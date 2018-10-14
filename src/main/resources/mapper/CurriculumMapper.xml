@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.szlhsoft.dao.CurriculumMapper" >
+  <resultMap id="BaseResultMap" type="com.szlhsoft.model.Curriculum" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="charge" property="charge" jdbcType="DECIMAL" />
+    <result column="cover" property="cover" jdbcType="VARCHAR" />
+    <result column="kch" property="kch" jdbcType="VARCHAR" />
+    <result column="kcjj" property="kcjj" jdbcType="VARCHAR" />
+    <result column="kclbm" property="kclbm" jdbcType="VARCHAR" />
+    <result column="kcmc" property="kcmc" jdbcType="VARCHAR" />
+    <result column="kcyq" property="kcyq" jdbcType="VARCHAR" />
+    <result column="kcywmc" property="kcywmc" jdbcType="VARCHAR" />
+    <result column="kkjssj" property="kkjssj" jdbcType="TIMESTAMP" />
+    <result column="kkkssj" property="kkkssj" jdbcType="TIMESTAMP" />
+    <result column="ksxnd" property="ksxnd" jdbcType="VARCHAR" />
+    <result column="ksxqm" property="ksxqm" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="wsjxzk" property="wsjxzk" jdbcType="VARCHAR" />
+    <result column="xf" property="xf" jdbcType="INTEGER" />
+    <result column="xs" property="xs" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, charge, cover, kch, kcjj, kclbm, kcmc, kcyq, kcywmc, kkjssj, kkkssj, ksxnd, ksxqm, 
+    status, wsjxzk, xf, xs
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_curriculum
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_curriculum
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.szlhsoft.model.Curriculum" >
+    insert into t_curriculum (id, charge, cover, 
+      kch, kcjj, kclbm, kcmc, 
+      kcyq, kcywmc, kkjssj, 
+      kkkssj, ksxnd, ksxqm, 
+      status, wsjxzk, xf, 
+      xs)
+    values (#{id,jdbcType=BIGINT}, #{charge,jdbcType=DECIMAL}, #{cover,jdbcType=VARCHAR}, 
+      #{kch,jdbcType=VARCHAR}, #{kcjj,jdbcType=VARCHAR}, #{kclbm,jdbcType=VARCHAR}, #{kcmc,jdbcType=VARCHAR}, 
+      #{kcyq,jdbcType=VARCHAR}, #{kcywmc,jdbcType=VARCHAR}, #{kkjssj,jdbcType=TIMESTAMP}, 
+      #{kkkssj,jdbcType=TIMESTAMP}, #{ksxnd,jdbcType=VARCHAR}, #{ksxqm,jdbcType=VARCHAR}, 
+      #{status,jdbcType=VARCHAR}, #{wsjxzk,jdbcType=VARCHAR}, #{xf,jdbcType=INTEGER}, 
+      #{xs,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.szlhsoft.model.Curriculum" >
+    insert into t_curriculum
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="charge != null" >
+        charge,
+      </if>
+      <if test="cover != null" >
+        cover,
+      </if>
+      <if test="kch != null" >
+        kch,
+      </if>
+      <if test="kcjj != null" >
+        kcjj,
+      </if>
+      <if test="kclbm != null" >
+        kclbm,
+      </if>
+      <if test="kcmc != null" >
+        kcmc,
+      </if>
+      <if test="kcyq != null" >
+        kcyq,
+      </if>
+      <if test="kcywmc != null" >
+        kcywmc,
+      </if>
+      <if test="kkjssj != null" >
+        kkjssj,
+      </if>
+      <if test="kkkssj != null" >
+        kkkssj,
+      </if>
+      <if test="ksxnd != null" >
+        ksxnd,
+      </if>
+      <if test="ksxqm != null" >
+        ksxqm,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="wsjxzk != null" >
+        wsjxzk,
+      </if>
+      <if test="xf != null" >
+        xf,
+      </if>
+      <if test="xs != null" >
+        xs,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="charge != null" >
+        #{charge,jdbcType=DECIMAL},
+      </if>
+      <if test="cover != null" >
+        #{cover,jdbcType=VARCHAR},
+      </if>
+      <if test="kch != null" >
+        #{kch,jdbcType=VARCHAR},
+      </if>
+      <if test="kcjj != null" >
+        #{kcjj,jdbcType=VARCHAR},
+      </if>
+      <if test="kclbm != null" >
+        #{kclbm,jdbcType=VARCHAR},
+      </if>
+      <if test="kcmc != null" >
+        #{kcmc,jdbcType=VARCHAR},
+      </if>
+      <if test="kcyq != null" >
+        #{kcyq,jdbcType=VARCHAR},
+      </if>
+      <if test="kcywmc != null" >
+        #{kcywmc,jdbcType=VARCHAR},
+      </if>
+      <if test="kkjssj != null" >
+        #{kkjssj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="kkkssj != null" >
+        #{kkkssj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ksxnd != null" >
+        #{ksxnd,jdbcType=VARCHAR},
+      </if>
+      <if test="ksxqm != null" >
+        #{ksxqm,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="wsjxzk != null" >
+        #{wsjxzk,jdbcType=VARCHAR},
+      </if>
+      <if test="xf != null" >
+        #{xf,jdbcType=INTEGER},
+      </if>
+      <if test="xs != null" >
+        #{xs,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.szlhsoft.model.Curriculum" >
+    update t_curriculum
+    <set >
+      <if test="charge != null" >
+        charge = #{charge,jdbcType=DECIMAL},
+      </if>
+      <if test="cover != null" >
+        cover = #{cover,jdbcType=VARCHAR},
+      </if>
+      <if test="kch != null" >
+        kch = #{kch,jdbcType=VARCHAR},
+      </if>
+      <if test="kcjj != null" >
+        kcjj = #{kcjj,jdbcType=VARCHAR},
+      </if>
+      <if test="kclbm != null" >
+        kclbm = #{kclbm,jdbcType=VARCHAR},
+      </if>
+      <if test="kcmc != null" >
+        kcmc = #{kcmc,jdbcType=VARCHAR},
+      </if>
+      <if test="kcyq != null" >
+        kcyq = #{kcyq,jdbcType=VARCHAR},
+      </if>
+      <if test="kcywmc != null" >
+        kcywmc = #{kcywmc,jdbcType=VARCHAR},
+      </if>
+      <if test="kkjssj != null" >
+        kkjssj = #{kkjssj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="kkkssj != null" >
+        kkkssj = #{kkkssj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ksxnd != null" >
+        ksxnd = #{ksxnd,jdbcType=VARCHAR},
+      </if>
+      <if test="ksxqm != null" >
+        ksxqm = #{ksxqm,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="wsjxzk != null" >
+        wsjxzk = #{wsjxzk,jdbcType=VARCHAR},
+      </if>
+      <if test="xf != null" >
+        xf = #{xf,jdbcType=INTEGER},
+      </if>
+      <if test="xs != null" >
+        xs = #{xs,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.szlhsoft.model.Curriculum" >
+    update t_curriculum
+    set charge = #{charge,jdbcType=DECIMAL},
+      cover = #{cover,jdbcType=VARCHAR},
+      kch = #{kch,jdbcType=VARCHAR},
+      kcjj = #{kcjj,jdbcType=VARCHAR},
+      kclbm = #{kclbm,jdbcType=VARCHAR},
+      kcmc = #{kcmc,jdbcType=VARCHAR},
+      kcyq = #{kcyq,jdbcType=VARCHAR},
+      kcywmc = #{kcywmc,jdbcType=VARCHAR},
+      kkjssj = #{kkjssj,jdbcType=TIMESTAMP},
+      kkkssj = #{kkkssj,jdbcType=TIMESTAMP},
+      ksxnd = #{ksxnd,jdbcType=VARCHAR},
+      ksxqm = #{ksxqm,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      wsjxzk = #{wsjxzk,jdbcType=VARCHAR},
+      xf = #{xf,jdbcType=INTEGER},
+      xs = #{xs,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
