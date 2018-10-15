@@ -40,11 +40,7 @@ public class Resourceses extends BaseController {
     @RequestMapping(value="/init", method={RequestMethod.GET,RequestMethod.POST})
     @Method(name="初始化系统")
     public ModelAndView login(HttpServletRequest request){
-        //test();
-        //getSysAllUrl();
-        //HttpServletRequest request=((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
         Map map=request.getParameterMap();
-        //String[] username=(String[])map.get("username");
         Map <String,Object> params= new HashMap();
         Set<String> keySet=map.keySet();
         for(String key:keySet){
@@ -52,14 +48,8 @@ public class Resourceses extends BaseController {
             String sum="";
             for(String value:values){
                 sum+=value;
-                System.out.println(value);
             }
-            //System.out.println(sum);
             params.put(key, sum);
-        }
-        for(String name:params.keySet()){
-            System.out.println(name);
-            System.out.println(params.get(name));
         }
         ModelAndView modelAndView = new ModelAndView();
         getJsConfigPath(modelAndView);
@@ -73,18 +63,10 @@ public class Resourceses extends BaseController {
             Map<String,Object> urlMap=urlList.get(1);
             modelAndView.addObject("localPath",String.valueOf(urlMap.get("url")));
         }
-        modelAndView.setViewName("main");
+        modelAndView.setViewName("/admin/main");
         return modelAndView;
     }
-	/*public List<JSONObject> genTree(List<Menu> list,Menu menu){
-		List<JSONObject> menuList=new ArrayList();
-		for(Menu m:list){
-			if(m.getPid().equals(menu)){
-				System.out.println("te------------");
-			}
-		}
-		return menuList;
-	}*/
+
     /**
      * 获取系统Js配置并返回给视图
      * @param modelAndView
