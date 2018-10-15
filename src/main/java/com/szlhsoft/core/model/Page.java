@@ -1,4 +1,4 @@
-package com.szlhsoft.model;
+package com.szlhsoft.core.model;
 
 import java.util.List;
 import java.util.Map;

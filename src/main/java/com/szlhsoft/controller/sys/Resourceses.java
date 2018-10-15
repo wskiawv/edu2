@@ -1,10 +1,10 @@
 package com.szlhsoft.controller.sys;
 
-import com.szlhsoft.annotation.Ctl;
-import com.szlhsoft.annotation.Method;
-import com.szlhsoft.controller.base.BaseController;
+import com.szlhsoft.core.annotation.Ctl;
+import com.szlhsoft.core.annotation.Method;
+import com.szlhsoft.core.controller.base.BaseController;
 import com.szlhsoft.core.util.XmlUtil;
-import com.szlhsoft.model.Message;
+import com.szlhsoft.core.model.Message;
 import com.szlhsoft.service.sys.ResourcesServiceI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -1,4 +1,4 @@
-package com.szlhsoft.annotation;
+package com.szlhsoft.core.annotation;
 
 
 

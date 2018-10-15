@@ -1,6 +1,6 @@
 package com.szlhsoft.dao.sys;
 
-import com.szlhsoft.dao.base.BaseDaoI;
+import com.szlhsoft.core.dao.base.BaseDaoI;
 import com.szlhsoft.model.sys.Resources;
 
 import java.util.List;

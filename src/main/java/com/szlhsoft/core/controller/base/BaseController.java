@@ -1,4 +1,4 @@
-package com.szlhsoft.controller.base;
+package com.szlhsoft.core.controller.base;
 
 /**
  * Created by Administrator on 2018/9/19.

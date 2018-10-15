@@ -1,4 +1,4 @@
-package com.szlhsoft.annotation;
+package com.szlhsoft.core.annotation;
 
 import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;

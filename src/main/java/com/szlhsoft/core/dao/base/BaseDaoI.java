@@ -1,4 +1,4 @@
-package com.szlhsoft.dao.base;
+package com.szlhsoft.core.dao.base;
 
 import java.util.List;
 import java.util.Map;

@@ -1,6 +1,6 @@
 package com.szlhsoft.core.util;
 
-import com.szlhsoft.annotation.Ctl;
+import com.szlhsoft.core.annotation.Ctl;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
@@ -30,8 +30,8 @@ public class AnnotationUtil {
 				map.put("ctlName", ctlName);
 				map.put("method", method);
 				for(Annotation j:a){
-					if(j.annotationType().equals(com.szlhsoft.annotation.Method.class)){
-						com.szlhsoft.annotation.Method methodName=i.getAnnotation(com.szlhsoft.annotation.Method.class);
+					if(j.annotationType().equals(com.szlhsoft.core.annotation.Method.class)){
+						com.szlhsoft.core.annotation.Method methodName=i.getAnnotation(com.szlhsoft.core.annotation.Method.class);
 						map.put("methodName", methodName.name());
 					}
 				}

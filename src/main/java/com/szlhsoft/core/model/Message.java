@@ -1,4 +1,4 @@
-package com.szlhsoft.model;
+package com.szlhsoft.core.model;
 
 public class Message {
 	private String title;
