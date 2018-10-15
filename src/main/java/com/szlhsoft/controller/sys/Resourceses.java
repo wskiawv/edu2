@@ -8,6 +8,7 @@ import com.szlhsoft.core.model.Message;
 import com.szlhsoft.service.sys.ResourcesServiceI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -39,7 +40,7 @@ public class Resourceses extends BaseController {
     }
     @RequestMapping(value="/init", method={RequestMethod.GET,RequestMethod.POST})
     @Method(name="初始化系统")
-    public ModelAndView login(HttpServletRequest request){
+    public String login(HttpServletRequest request, Model model){
         Map map=request.getParameterMap();
         Map <String,Object> params= new HashMap();
         Set<String> keySet=map.keySet();
@@ -51,29 +52,29 @@ public class Resourceses extends BaseController {
             }
             params.put(key, sum);
         }
-        ModelAndView modelAndView = new ModelAndView();
-        getJsConfigPath(modelAndView);
+
+        getJsConfigPath(model);
         List<Map<String,Object>> urlList= XmlUtil.getElementObject(null);
         Boolean localFlag=XmlUtil.getRootAttribute(null);
-        modelAndView.addObject("localFlag",localFlag.toString());
+        model.addAttribute("localFlag",localFlag.toString());
         if(urlList!=null&& urlList.size()>0&&!localFlag){
             Map<String,Object> urlMap=urlList.get(0);
-            modelAndView.addObject("hdfsUrl",String.valueOf(urlMap.get("url")));
+            model.addAttribute("hdfsUrl",String.valueOf(urlMap.get("url")));
         }else{
             Map<String,Object> urlMap=urlList.get(1);
-            modelAndView.addObject("localPath",String.valueOf(urlMap.get("url")));
+            model.addAttribute("localPath",String.valueOf(urlMap.get("url")));
         }
-        modelAndView.setViewName("/admin/main");
-        return modelAndView;
+
+        return "/admin/main";
     }
 
     /**
      * 获取系统Js配置并返回给视图
-     * @param modelAndView
+     * @param model
      */
-    public void getJsConfigPath(ModelAndView modelAndView){
+    public void getJsConfigPath(Model model){
         List<String>list=XmlUtil.getJsPath();
-        modelAndView.addObject("jsConfigPathList", list);
+        model.addAttribute("jsConfigPathList", list);
 
     }
 
