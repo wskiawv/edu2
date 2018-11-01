@@ -1,7 +1,7 @@
 package com.szlhsoft.interceptor;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 @Component
 public class EduInterceptor implements HandlerInterceptor {
 
-    private static final Logger LOGGE = LoggerFactory.getLogger(EduInterceptor.class);
+    private static final Log LOGGE = LogFactory.getLog(EduInterceptor.class);
     private static final String USER_AGENT = "user-agent";
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object o) throws Exception {

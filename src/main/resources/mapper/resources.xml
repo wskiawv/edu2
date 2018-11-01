@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.szlhsoft.dao.sys.ResourcesDaoI" >
-    <resultMap id="Menu" type="com.webank.hec.model.sys.Resources" >
+    <resultMap id="Resources" type="com.szlhsoft.model.sys.Resources" >
         <result column="MENU_ID" property="menuId" jdbcType="DECIMAL" />
         <result column="ICONCLS" property="iconcls" jdbcType="VARCHAR" />
         <result column="LEAF" property="leaf" jdbcType="DECIMAL" />
@@ -133,7 +133,7 @@
     <delete id="deleteAll">
         delete t_resources
     </delete>
-    <select id="select" parameterType="String" resultMap="Menu">
+    <select id="select" parameterType="String" resultMap="Resources">
         select * from t_resources where MODULES=#{name,jdbcType=VARCHAR} and METHODNAME is null
     </select>
 </mapper>
