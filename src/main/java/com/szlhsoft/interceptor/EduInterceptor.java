@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
  */
 @Component
 public class EduInterceptor implements HandlerInterceptor {
-
     private static final Log LOGGE = LogFactory.getLog(EduInterceptor.class);
     private static final String USER_AGENT = "user-agent";
     @Override
