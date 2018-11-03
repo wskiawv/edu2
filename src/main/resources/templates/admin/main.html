@@ -1,8 +1,76 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" th:with="title='后台管理系统'">
-<header></header>
-<body>
+<header>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/js/desktop/css/desktop.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/js/desktop/css/main.css}" />
+    <script type="text/javascript" th:src="@{/js/desktop/ext/include-ext.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/ext/options-toolbar.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/ext/ext-lang-zh_CN.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/ext/examples.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/ux/IFrame.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/js/ShortcutModel.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/js/StartMenu.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/js/TaskBar.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/js/Desktop.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/js/App.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/plugins/flash/swfobject.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/js/Module.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/js/Video.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/js/Audio.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/js/Wallpaper.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/ux/TabCloseMenu.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/AccordionWindow.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/GridWindow.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/app/comm/GridJsonStore.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/app/comm/Msg.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/app/comm/CommButton.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/app/comm/Paging.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/app/comm/CommComboBox.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/app/comm/CenterGrid.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/app/comm/ShowGrid.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/app/comm/SearchPanel.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/app/comm/ShowPanel.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/app/comm/CommWindow.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/app/comm/CenterTabPanel.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/app/comm/WestTreePanel.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/app/comm/WestPanel.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/app/comm/CRUDPanel.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/app/eims/Eims.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/Notepad.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/SystemStatus.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/TabWindow.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/VideoWindow.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/AudioWindow.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/SWFVideo.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/BogusModule.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/BogusMenuModule.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/WallpaperModel.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/Settings.js}"></script>
+    <script type="text/javascript" th:src="@{/js/desktop/App.js}"></script>
+    <script type="text/javascript">
+    	var eims='';
+    	var eimsMenu='';
+    	var appPath='';
+    	Ext.Loader.setConfig({enabled:true});
+        Ext.Loader.setPath({
+            'Ext.ux.desktop': 'js/desktop/js',
+            'Ext.ux': 'js/desktop/ext/src/ux',
+            'desktop':'js/desktop/app',
+           	'App':''
+        });
+        Ext.require('App');
+        var app;
+        Ext.onReady(function () {
+            app = new App();
+        });
 
+
+    </script>
+</header>
+<body>
+<a href="http://www.freeouting.com" target="_blank" alt="www.freeouting.com"
+   id="poweredby"><div></div></a>
 
 </body>
 </html>

@@ -14,6 +14,15 @@ public class IndexController {
      */
     @GetMapping(value = {"/", "index"})
     public String index() {
-        return "login";
+        return "admin/login";
+    }
+    /**
+     * 首页
+     *
+     * @return
+     */
+    @GetMapping(value = {"/main", "main"})
+    public String main(){
+        return "admin/main";
     }
 }

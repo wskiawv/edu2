@@ -23,7 +23,7 @@ Ext.define('desktop.app.eims.Eims',{
 	createWindow : function(){
     	var me=this,desktop = this.app.getDesktop();
         var win = desktop.getWindow(me.id);
-        var eimsMenu=null;
+
         if(!win){
         	win = desktop.createWindow({
         		id:me.id,

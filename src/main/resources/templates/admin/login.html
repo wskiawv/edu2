@@ -2,7 +2,78 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" th:with="title='登陆后台管理系统'">
 <header></header>
 <body>
+<title>登陆</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" th:href="@{/js/desktop/css/desktop.css}"/>
+<script type="text/javascript" th:src="@{/js/desktop/ext/include-ext.js}"></script>
+<script type="text/javascript" th:src="@{/js/desktop/ext/options-toolbar.js}"></script>
+<script type="text/javascript" th:src="@{/js/desktop/ext/ext-lang-zh_CN.js}"></script>
+<script type="text/javascript" th:src="@{/js/desktop/ext/examples.js}"></script>
+<script>
+	var appPath='';
+	Ext.require([
+	             'Ext.form.Panel'
+	         ]);
+	Ext.onReady(function () {
+    	var form=Ext.create('Ext.form.Panel',{
+    		title:'登陆',
+    		width:500,
+    		height:300,
+    		renderTo:Ext.getBody(),
+    		fieldDefaults: {
+		        labelWidth: 120,
+		        labelAlign:'right'
+		    },
+    		items:[{
+    			xtype:'textfield',
+    			fieldLabel:'用户名',
+    			name:'user_name',
+    			allowBlank: false
+    		},{
+    			xtype:'textfield',
+    			fieldLabel:'密码',
+    			inputType:'password',
+    			name:'user_password',
+    			allowBlank: false
+    		}],
+    		buttons:[{
+    			text:'登陆',
+    			handler:function(){
+    				var url=appPath+"/login";
+    				var params=form.getForm().getValues();
+    				if(!form.getForm().isValid()){
+    					Ext.example.msg("温馨提示","请输入用户和密码！");
+    					return;
+    				}
+    				debugger;
+    				Ext.Ajax.request({
+    		            url: url,
+    		            params:params,
+    		            success: function(response){
+    		           		window.location.href="/main";
+    		                var text = response.responseText;
+    		                var result=Ext.decode(text);
+    		                if(result.success){
+    		               		//Ext.example.msg("温馨提示","登陆成功");
+    		               		window.location.href="select.js";
+    		                }else{
+    		                	Ext.example.msg("温馨提示","登陆失败,用户或密码错误!");
+    		                }
 
+    		            },
+    		            failure:function(){
+    		               Ext.example.msg('温馨提醒',"登陆失败!");
+    		              // wait.close();
+    		            }
+    		        });
+    			}
+
+    		}]
+    	});
+    	form.el.center();
+
+    });
+	</script>
 
 </body>
 </html>

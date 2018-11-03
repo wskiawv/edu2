@@ -1,42 +1,50 @@
 package com.szlhsoft.model.sys;
 
 public class Resources {
-    private Long menuId;
+    private Integer id;
+
+    private String ctl;
 
     private String iconcls;
 
-    private Long leaf;
+    private Boolean leaf;
+
+    private String method;
+
+    private String methodname;
 
     private String modules;
 
-    private Long ordernum;
+    private String modulesname;
+
+    private Integer ordernum;
 
     private String qtip;
 
     private String text;
 
-    private String xtype;
-
-    private Long pid;
-
-    private String ctl;
-
-    private String methodname;
-
-    private String methoddesc;
-
-    private String modulesname;
-
     private String url;
 
-    private Long display;
+    private String xtype;
 
-    public Long getMenuId() {
-        return menuId;
+    private Integer pid;
+
+    private Boolean display;
+
+    public Integer getId() {
+        return id;
     }
 
-    public void setMenuId(Long menuId) {
-        this.menuId = menuId;
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getCtl() {
+        return ctl;
+    }
+
+    public void setCtl(String ctl) {
+        this.ctl = ctl == null ? null : ctl.trim();
     }
 
     public String getIconcls() {
@@ -47,12 +55,28 @@ public class Resources {
         this.iconcls = iconcls == null ? null : iconcls.trim();
     }
 
-    public Long getLeaf() {
+    public Boolean getLeaf() {
         return leaf;
     }
 
-    public void setLeaf(Long leaf) {
+    public void setLeaf(Boolean leaf) {
         this.leaf = leaf;
+    }
+
+    public String getMethod() {
+        return method;
+    }
+
+    public void setMethod(String method) {
+        this.method = method == null ? null : method.trim();
+    }
+
+    public String getMethodname() {
+        return methodname;
+    }
+
+    public void setMethodname(String methodname) {
+        this.methodname = methodname == null ? null : methodname.trim();
     }
 
     public String getModules() {
@@ -63,11 +87,19 @@ public class Resources {
         this.modules = modules == null ? null : modules.trim();
     }
 
-    public Long getOrdernum() {
+    public String getModulesname() {
+        return modulesname;
+    }
+
+    public void setModulesname(String modulesname) {
+        this.modulesname = modulesname == null ? null : modulesname.trim();
+    }
+
+    public Integer getOrdernum() {
         return ordernum;
     }
 
-    public void setOrdernum(Long ordernum) {
+    public void setOrdernum(Integer ordernum) {
         this.ordernum = ordernum;
     }
 
@@ -87,6 +119,14 @@ public class Resources {
         this.text = text == null ? null : text.trim();
     }
 
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url == null ? null : url.trim();
+    }
+
     public String getXtype() {
         return xtype;
     }
@@ -95,58 +135,19 @@ public class Resources {
         this.xtype = xtype == null ? null : xtype.trim();
     }
 
-    public Long getPid() {
+    public Integer getPid() {
         return pid;
     }
 
-    public void setPid(Long pid) {
+    public void setPid(Integer pid) {
         this.pid = pid;
     }
 
-    public String getCtl() {
-        return ctl;
-    }
-
-    public void setCtl(String ctl) {
-        this.ctl = ctl == null ? null : ctl.trim();
-    }
-
-    public String getMethodname() {
-        return methodname;
-    }
-
-    public void setMethodname(String methodname) {
-        this.methodname = methodname == null ? null : methodname.trim();
-    }
-
-    public String getMethoddesc() {
-        return methoddesc;
-    }
-
-    public void setMethoddesc(String methoddesc) {
-        this.methoddesc = methoddesc == null ? null : methoddesc.trim();
-    }
-
-    public String getModulesname() {
-        return modulesname;
-    }
-
-    public void setModulesname(String modulesname) {
-        this.modulesname = modulesname == null ? null : modulesname.trim();
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url == null ? null : url.trim();
-    }
-    public Long getDisplay() {
+    public Boolean getDisplay() {
         return display;
     }
 
-    public void setDisplay(Long display) {
+    public void setDisplay(Boolean display) {
         this.display = display;
     }
 }

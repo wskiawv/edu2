@@ -26,19 +26,19 @@ import java.util.Set;
 public class Resourceses extends BaseController {
     @Autowired
     private ResourcesServiceI resourcesServiceI;
-    @RequestMapping(value="/getMenu", method={RequestMethod.GET,RequestMethod.POST})
+    @RequestMapping(value="/init", method={RequestMethod.GET,RequestMethod.POST})
     @ResponseBody
     @Method(name="获取菜单")
-    public Object getMenu(){
+    public Object init(){
         Message m=new Message();
-        Map<String,Object> menu=resourcesServiceI.getResources();
+        Map<String,Object> menu=resourcesServiceI.initResources();
         m.setTitle("温馨提示");
         m.setContent("菜单初始化成功");
         m.setSuccess(true);
         m.setResult(menu);
         return m;
     }
-    @RequestMapping(value="/init", method={RequestMethod.GET,RequestMethod.POST})
+    @RequestMapping(value="/login", method={RequestMethod.GET,RequestMethod.POST})
     @Method(name="初始化系统")
     public String login(HttpServletRequest request, Model model){
         Map map=request.getParameterMap();
@@ -67,7 +67,18 @@ public class Resourceses extends BaseController {
 
         return "/admin/main";
     }
-
+    @RequestMapping(value="/getMenu", method={RequestMethod.GET,RequestMethod.POST})
+    @ResponseBody
+    @Method(name="获取菜单")
+    public Object getMenu(){
+        Message m=new Message();
+        Map<String,Object> menu=resourcesServiceI.getResources();
+        m.setTitle("温馨提示");
+        m.setContent("菜单初始化成功");
+        m.setSuccess(true);
+        m.setResult(menu);
+        return m;
+    }
     /**
      * 获取系统Js配置并返回给视图
      * @param model

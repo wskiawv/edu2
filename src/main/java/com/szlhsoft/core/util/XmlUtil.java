@@ -17,9 +17,9 @@ public class XmlUtil {
 	//private static String modulesXmlFile="";
 	private Document docment;
 	static {
-		xmlFile = XmlUtil.class.getClassLoader().getResource("").getPath() + "storage.xml";
+		xmlFile = XmlUtil.class.getClassLoader().getResource("").getPath() + "/config/storage.xml";
 		//modulesXmlFile=XmlUtil.class.getClassLoader().getResource("").getPath() + "modules.xml";
-		jsConfigFile = XmlUtil.class.getClassLoader().getResource("").getPath() + "js.xml";
+		jsConfigFile = XmlUtil.class.getClassLoader().getResource("").getPath() + "/config/js.xml";
 	}
 
 	public static void main(String[] args) {

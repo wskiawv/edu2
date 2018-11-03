@@ -40,7 +40,7 @@
     var scriptEls = document.getElementsByTagName('script'),
         path = scriptEls[scriptEls.length - 1].src,
         rtl = getQueryParam('rtl'),
-        theme = getQueryParam('theme') || 'classic',
+        theme = getQueryParam('theme') || 'neptune',//修改默认主题
         includeCSS = !hasOption('nocss', path),
         neptune = (theme === 'neptune'),
         repoDevMode = getCookieValue('ExtRepoDevMode'),

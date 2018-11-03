@@ -23,12 +23,8 @@ Ext.define('App', {
         'BogusModule',
         //'Blockalanche',
         'Settings',
-        'desktop.app.user.User',
-		'desktop.app.filesys.FileSys',
-		'DouBan',
 		'desktop.app.eims.Eims',
-		'desktop.app.hec.Hec',
-		'desktop.app.hr.Hr'
+
     ],
 
     init: function() {
@@ -42,23 +38,8 @@ Ext.define('App', {
 
     getModules : function(){
         return [
-            //new VideoWindow(),
-            //new SWFVideo(),
-            //new AudioWindow(),
-          //  new Blockalanche(),
-           // new SystemStatus(),
-           // new GridWindow(),
-           // new TabWindow(),
-           // new AccordionWindow(),
-           // new Notepad(),
-           // new BogusMenuModule(),
-           // new BogusModule(),
-          //  new desktop.app.user.User(),
-           // new desktop.app.filesys.FileSys(),
-            //new desktop.app.eims.Eims(),
-            new desktop.app.hec.Hec(),
-            new desktop.app.hr.Hr(),
-            new DouBan()
+            new desktop.app.eims.Eims()
+
             
         ];
     },
@@ -92,19 +73,7 @@ Ext.define('App', {
      */
 	getDesktopIocn : function (){
 		var data=[
-                    /*{ name: 'Grid Window', iconCls: 'grid-shortcut', module: 'grid-win' },  */  
-                    //{ name: '视频播放器', iconCls: 'video', module: 'video' },
-                   // { name: '音乐播放器', iconCls: 'audio', module: 'audio' },
-                   /* { name: '用户管理', iconCls: 'grid-shortcut', module: 'user-grid' },*/
-                    { name: '人力资源管理系统', iconCls: 'accordion-shortcut', module: 'hr' },
-                    //{ name: 'SWF视频播放器', iconCls: 'video', module: 'swfvideo' },
-                   /* { name: '文件管理', iconCls: 'grid-shortcut', module: 'FileSys' },*/
-                    { name: '豆瓣电台', iconCls: 'dbfm-shortcut', module: 'douban' },
-                  /*  { name: 'Accordion Window', iconCls: 'accordion-shortcut', module: 'acc-win' },                    
-                    { name: 'Notepad', iconCls: 'notepad-shortcut', module: 'notepad' },      */          
-                    /*{ name: '教务系统', iconCls: 'grid-shortcut', module: 'eims' }, */      
-                    { name: '费用控制系统', iconCls: 'grid-shortcut', module: 'hec' }
-                   /* { name: 'System Status', iconCls: 'cpu-shortcut', module: 'systemstatus'}*/
+                    { name: '教务系统', iconCls: 'grid-shortcut', module: 'eims' }
                 ];
 		return data;
 	},
@@ -160,14 +129,7 @@ Ext.define('App', {
      */
 	getQuickStartIocn : function(){
 		var data=[
-			/*{ name: 'Accordion Window', iconCls: 'accordion', module: 'acc-win' },*/
-            /*{ name: 'Grid Window', iconCls: 'icon-grid', module: 'grid-win' },*/
-           /* { name: '用户管理', iconCls: 'icon-grid', module: 'user-grid' },*/
-            { name: '人力资源管理系统', iconCls: 'accordion', module: 'hr' },
-            /*{ name: '文件管理', iconCls: 'icon-grid', module: 'FileSys' },*/
-           /* { name: '教务管理系统', iconCls: 'icon-grid', module: 'eims' },*/
-            { name: '费用控制系统', iconCls: 'icon-grid', module: 'hec' }
-            
+                { name: '教务管理系统', iconCls: 'icon-grid', module: 'eims' },
             ];
          return data;
 	},
@@ -231,7 +193,6 @@ Ext.define('App', {
         				}
         			}
         		});
-        		//window.location.href=appPath+"/teacher/Teachers/onLogout";
         	}
         });
     }

@@ -22,9 +22,9 @@ public class ResourcesService implements ResourcesServiceI {
     private ResourcesDaoI resourcesDaoI;
     private boolean flag = false;
     @Override
-    public void initResources() {
+    public Map<String, Object> initResources() {
         String menuFile="modules.xml";
-        String path=this.getClass().getClassLoader().getResource("").getPath();
+        String path=this.getClass().getClassLoader().getResource("").getPath()+"/config/";
         SAXReader saxReader = new SAXReader();
         boolean isUpdateModules=false;
 
@@ -63,13 +63,14 @@ public class ResourcesService implements ResourcesServiceI {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return null;
     }
     public List<JSONObject> getNode(List<Resources> list,List<JSONObject>nodeList,String id){
         //List<JSONObject> nodeList =new ArrayList();
         for(Resources mL:list){
             JSONObject node=new JSONObject();
             if(mL.getPid()!=null && id.equals(String.valueOf(mL.getPid()))){
-                Long l=mL.getLeaf();
+                Boolean l=mL.getLeaf();
                 String s=l.toString();
                 Boolean leaf=false;
                 if(s.equals("0")){
@@ -78,7 +79,7 @@ public class ResourcesService implements ResourcesServiceI {
                     leaf=true;
                 }
                 //Boolean leaf=Boolean.parseBoolean(String.valueOf(mL.getLeaf()));
-                node.put("id", mL.getMenuId());
+                node.put("id", mL.getId());
                 node.put("leaf", leaf);
                 node.put("xtype", mL.getXtype());
                 node.put("text", mL.getText());
@@ -87,7 +88,7 @@ public class ResourcesService implements ResourcesServiceI {
                 if(!leaf){
                     List<JSONObject> cList=new ArrayList();
                     JSONObject js=new JSONObject();
-                    cList=getNode(list,cList,String.valueOf(mL.getMenuId()));
+                    cList=getNode(list,cList,String.valueOf(mL.getId()));
                     node.put("children", cList);
 
                 }else{
@@ -101,7 +102,7 @@ public class ResourcesService implements ResourcesServiceI {
     @Override
     public Map<String, Object> getResources() {
         Map<String,Object> menu=new HashMap();
-        String modulesXmlFile=this.getClass().getClassLoader().getResource("").getPath()+"modules.xml";
+        String modulesXmlFile=this.getClass().getClassLoader().getResource("").getPath()+"/config/modules.xml";
         List<Map<String,String>> modulesList=XmlUtil.getModules(modulesXmlFile);
         for(Map<String,String> m:modulesList){
             if(m.get("menu")!=null && !m.get("menu").toString().equals("") && m.get("name")!=null && !m.get("name").toString().equals("")){
@@ -110,7 +111,7 @@ public class ResourcesService implements ResourcesServiceI {
                 List<JSONObject> list=new ArrayList();
                 for(Resources  mL:resourcesList){
                     if(mL.getPid()==null){
-                        Long l=mL.getLeaf();
+                        Boolean l=mL.getLeaf();
                         String s=l.toString();
                         Boolean leaf=false;
                         if(s.equals("0")){
@@ -120,7 +121,7 @@ public class ResourcesService implements ResourcesServiceI {
                         }
 
                         JSONObject js=new JSONObject();
-                        js.put("id", mL.getMenuId());
+                        js.put("id", mL.getId());
                         js.put("leaf", leaf);
                         js.put("xtype", mL.getXtype());
                         js.put("text", mL.getText());
@@ -128,7 +129,7 @@ public class ResourcesService implements ResourcesServiceI {
                         js.put("iconCls", mL.getIconcls());
                         //JSONObject node=new JSONObject();
                         List<JSONObject> node=new ArrayList();
-                        node=getNode(resourcesList,node,String.valueOf(mL.getMenuId()));
+                        node=getNode(resourcesList,node,String.valueOf(mL.getId()));
                         js.put("children",node);
                         list.add(js);
                     }
@@ -145,12 +146,12 @@ public class ResourcesService implements ResourcesServiceI {
             Element elementInner = (Element) iterInner.next();
             Resources resources = new Resources();
             // 获取person节点的text属性的值
-            if(parentResources !=null && parentResources.getMenuId()!=null ){
-                resources.setPid(parentResources.getMenuId());
+            if(parentResources !=null && parentResources.getId()!=null ){
+                resources.setPid(parentResources.getId());
             }
             resources.setModules(modules);
             resources.setModulesname(modulesName);
-            resources.setOrdernum(Long.valueOf(i));
+            resources.setOrdernum(Integer.valueOf(i));
             i++;
             Attribute textAttr = elementInner.attribute("text");
             if (textAttr != null) {
@@ -165,12 +166,12 @@ public class ResourcesService implements ResourcesServiceI {
                 String xtype = xtypeAttr.getValue();
                 if (xtype != null && !xtype.equals("")) {
                     resources.setXtype(xtype);
-                    resources.setLeaf(Long.valueOf(1));
+                    resources.setLeaf(true);
                 }else{
-                    resources.setLeaf(Long.valueOf(0));
+                    resources.setLeaf(false);
                 }
             }else{
-                resources.setLeaf(Long.valueOf(0));
+                resources.setLeaf(false);
             }
             Attribute ctlAttr = elementInner.attribute("ctl");
             if(ctlAttr!=null){
@@ -180,12 +181,20 @@ public class ResourcesService implements ResourcesServiceI {
 
                 }
             }
+            Attribute displayAttr = elementInner.attribute("display");
+            if(displayAttr!=null){
+                Boolean display=Boolean.valueOf(displayAttr.getValue());
+                if(display !=null && !display.equals("")){
+                    resources.setDisplay(display);
+
+                }
+            }
             resourcesDaoI.insertSelective(resources);
             if(resources.getCtl()!=null && !resources.getCtl().equals("")){
                 String c=packageName+'.'+resources.getCtl();
                 List<Map<String,String>> list =new ArrayList();
-                list= AnnotationUtil.getCtlAnnotationConfig(c);
-                saveCtlConfigInfo(list,resources,modules,modulesName);
+                //list= AnnotationUtil.getCtlAnnotationConfig(c);
+                //saveCtlConfigInfo(list,resources,modules,modulesName);
             }
             toSaveMenus(elementInner, resources,modules,modulesName,packageName);
         }
@@ -193,7 +202,7 @@ public class ResourcesService implements ResourcesServiceI {
     public void saveCtlConfigInfo(List<Map<String,String>>list,Resources parentResources,String modules,String modulesName){
         for(Map m:list){
             Resources resources =new Resources();
-            resources.setPid(parentResources.getMenuId());
+            resources.setPid(parentResources.getId());
             resources.setModules(modules);
             resources.setModulesname(modulesName);
             resources.setCtl(parentResources.getCtl());
@@ -201,7 +210,7 @@ public class ResourcesService implements ResourcesServiceI {
             if(m.containsKey("method") && m.get("method") !=null){
                 String url=parentResources.getCtl()+'.'+m.get("method").toString();
                 resources.setUrl(url);
-                resources.setMethoddesc(m.get("method").toString());
+                resources.setMethod(m.get("method").toString());
                 resources.setMethodname(m.get("method").toString());
 
             }

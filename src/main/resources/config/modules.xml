@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <modules isUpdateModules="false">
 	<module text="教育信息管理系统" iconCls="icon-grid" diconCls="grid-shortcut" name="eims" menu="eims.xml" package="com.szlhsoft.controller"/>
-	<module text="考试管理系统" iconCls="icon-grid" diconCls="grid-shortcut" name="examination" menu="es.xml" package="com.szlhsoft.controller"/>
+	<!--<module text="考试管理系统" iconCls="icon-grid" diconCls="grid-shortcut" name="examination" menu="es.xml" package="com.szlhsoft.controller"/>
 	<module text="在线教育系统" iconCls="icon-grid" diconCls="grid-shortcut" name="oles" menu="oles.xml" package="com.szlhsoft.controller"/>
 	<module text="OA办公系统" iconCls="icon-grid" diconCls="grid-shortcut" name="oa" menu="oa.xml" package="com.szlhsoft.controller"/>
 	<module text="个人网盘" iconCls="icon-grid" diconCls="grid-shortcut" name="SkyDrivePersonal" menu="" package="com.szlhsoft.controller"/>
 	<module text="公共网盘" iconCls="icon-grid" diconCls="grid-shortcut" name="SkyDrivePublic" menu="" package="com.szlhsoft.controller"/>
-	<module text="直播管理" iconCls="icon-grid" diconCls="grid-shortcut" name="live" menu="live.xml" package="com.szlhsoft.controller"/>
+	<module text="直播管理" iconCls="icon-grid" diconCls="grid-shortcut" name="live" menu="live.xml" package="com.szlhsoft.controller"/>-->
 </modules>

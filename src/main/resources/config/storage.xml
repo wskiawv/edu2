@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<storages local="true">
+	<storage>
+		<name>hadoop</name>
+		<url>hdfs://192.168.1.200:9000/</url>
+		<port>9000</port>
+	</storage>
+	<storage>
+		<name>window or linux</name>
+		<url>E:/streams</url>	
+		<port></port>	
+	</storage>
+</storages>
