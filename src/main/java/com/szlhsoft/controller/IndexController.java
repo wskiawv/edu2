@@ -1,12 +1,13 @@
 package com.szlhsoft.controller;
 
+import com.szlhsoft.core.controller.base.BaseController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 @Controller
-public class IndexController {
+public class IndexController extends BaseController {
     /**
      * 首页
      *
@@ -23,6 +24,7 @@ public class IndexController {
      */
     @GetMapping(value = {"/main", "main"})
     public String main(){
+        LOGGER.info("main");
         return "admin/main";
     }
 }
