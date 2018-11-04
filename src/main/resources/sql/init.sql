@@ -105,9 +105,7 @@ CREATE TABLE `t_resources` (
   `xtype` varchar(255) DEFAULT NULL,
   `pid` int(20) DEFAULT NULL,
   `display` bit(1) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK_gh3ryfwlwfbulr0tf6nv7lffq` (`pid`),
-  CONSTRAINT `FK_gh3ryfwlwfbulr0tf6nv7lffq` FOREIGN KEY (`pid`) REFERENCES `t_menu` (`id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=342 DEFAULT CHARSET=utf8;
 
 -- ----------------------------

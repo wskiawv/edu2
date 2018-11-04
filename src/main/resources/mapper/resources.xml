@@ -30,7 +30,7 @@
         #{qtip,jdbcType=VARCHAR}, #{text,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, #{xtype,jdbcType=VARCHAR},
         #{pid,jdbcType=INTEGER}, #{display,jdbcType=BIT})
     </insert>
-    <insert id="insertSelective" parameterType="com.szlhsoft.model.sys.Resources">
+    <insert id="insertSelective" useGeneratedKeys="true" keyColumn="id" keyProperty="id" parameterType="com.szlhsoft.model.sys.Resources">
         insert into t_resources
         <trim prefix="(" suffix=")" suffixOverrides="," >
             <if test="id != null" >
@@ -126,6 +126,9 @@
                 #{display,jdbcType=BIT},
             </if>
         </trim>
+        <selectKey resultType="int" keyProperty="id" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
     </insert>
     <delete id="delete" parameterType="Long">
         delete t_resources where id=#{id,jdbcType=DECIMAL}

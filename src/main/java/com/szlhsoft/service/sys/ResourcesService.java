@@ -193,8 +193,8 @@ public class ResourcesService implements ResourcesServiceI {
             if(resources.getCtl()!=null && !resources.getCtl().equals("")){
                 String c=packageName+'.'+resources.getCtl();
                 List<Map<String,String>> list =new ArrayList();
-                //list= AnnotationUtil.getCtlAnnotationConfig(c);
-                //saveCtlConfigInfo(list,resources,modules,modulesName);
+                list= AnnotationUtil.getCtlAnnotationConfig(c);
+                saveCtlConfigInfo(list,resources,modules,modulesName);
             }
             toSaveMenus(elementInner, resources,modules,modulesName,packageName);
         }
