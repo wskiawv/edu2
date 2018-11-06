@@ -7,6 +7,28 @@
     <script type="text/javascript" th:src="@{/js/desktop/ext/include-ext.js}"></script>
     <script type="text/javascript" th:src="@{/js/desktop/ext/options-toolbar.js}"></script>
     <script type="text/javascript" th:src="@{/js/desktop/ext/ext-lang-zh_CN.js}"></script>
+    <script type="text/javascript" th:inline="javascript">
+        var menu=[[${menu}]];
+        var eims=eval(menu);
+        var eimsMenu=eims.eims;
+
+
+    	var appPath='';
+    	Ext.Loader.setConfig({enabled:true});
+        Ext.Loader.setPath({
+            'Ext.ux.desktop': 'js/desktop/js',
+            'Ext.ux': 'js/desktop/ext/src/ux',
+            'desktop':'js/desktop/app',
+           	'App':''
+        });
+        Ext.require('App');
+        var app;
+        Ext.onReady(function () {
+            app = new App();
+        });
+
+
+    </script>
     <script type="text/javascript" th:src="@{/js/desktop/ext/examples.js}"></script>
     <script type="text/javascript" th:src="@{/js/desktop/ux/IFrame.js}"></script>
     <script type="text/javascript" th:src="@{/js/desktop/js/ShortcutModel.js}"></script>
@@ -48,25 +70,8 @@
     <script type="text/javascript" th:src="@{/js/desktop/WallpaperModel.js}"></script>
     <script type="text/javascript" th:src="@{/js/desktop/Settings.js}"></script>
     <script type="text/javascript" th:src="@{/js/desktop/App.js}"></script>
-    <script type="text/javascript">
-    	var eims='';
-    	var eimsMenu='';
-    	var appPath='';
-    	Ext.Loader.setConfig({enabled:true});
-        Ext.Loader.setPath({
-            'Ext.ux.desktop': 'js/desktop/js',
-            'Ext.ux': 'js/desktop/ext/src/ux',
-            'desktop':'js/desktop/app',
-           	'App':''
-        });
-        Ext.require('App');
-        var app;
-        Ext.onReady(function () {
-            app = new App();
-        });
 
 
-    </script>
 </header>
 <body>
 <a href="http://www.freeouting.com" target="_blank" alt="www.freeouting.com"

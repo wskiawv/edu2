@@ -70,22 +70,15 @@ public class ResourcesService implements ResourcesServiceI {
         for(Resources mL:list){
             JSONObject node=new JSONObject();
             if(mL.getPid()!=null && id.equals(String.valueOf(mL.getPid()))){
-                Boolean l=mL.getLeaf();
-                String s=l.toString();
-                Boolean leaf=false;
-                if(s.equals("0")){
-                    leaf=false;
-                }else{
-                    leaf=true;
-                }
+
                 //Boolean leaf=Boolean.parseBoolean(String.valueOf(mL.getLeaf()));
                 node.put("id", mL.getId());
-                node.put("leaf", leaf);
+                node.put("leaf", mL.getLeaf());
                 node.put("xtype", mL.getXtype());
                 node.put("text", mL.getText());
                 node.put("qtip",mL.getQtip());
                 node.put("iconCls", mL.getIconcls());
-                if(!leaf){
+                if(!mL.getLeaf()){
                     List<JSONObject> cList=new ArrayList();
                     JSONObject js=new JSONObject();
                     cList=getNode(list,cList,String.valueOf(mL.getId()));
@@ -111,18 +104,10 @@ public class ResourcesService implements ResourcesServiceI {
                 List<JSONObject> list=new ArrayList();
                 for(Resources  mL:resourcesList){
                     if(mL.getPid()==null){
-                        Boolean l=mL.getLeaf();
-                        String s=l.toString();
-                        Boolean leaf=false;
-                        if(s.equals("0")){
-                            leaf=false;
-                        }else{
-                            leaf=true;
-                        }
 
                         JSONObject js=new JSONObject();
                         js.put("id", mL.getId());
-                        js.put("leaf", leaf);
+                        js.put("leaf", mL.getLeaf());
                         js.put("xtype", mL.getXtype());
                         js.put("text", mL.getText());
                         js.put("qtip",mL.getQtip());

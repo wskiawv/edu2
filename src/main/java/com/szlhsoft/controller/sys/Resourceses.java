@@ -28,7 +28,7 @@ public class Resourceses extends BaseController {
     private ResourcesServiceI resourcesServiceI;
     @RequestMapping(value="/init", method={RequestMethod.GET,RequestMethod.POST})
     @ResponseBody
-    @Method(name="获取菜单")
+    @Method(name="初始化系统")
     public Object init(){
         Message m=new Message();
         Map<String,Object> menu=resourcesServiceI.initResources();
@@ -39,7 +39,7 @@ public class Resourceses extends BaseController {
         return m;
     }
     @RequestMapping(value="/login", method={RequestMethod.GET,RequestMethod.POST})
-    @Method(name="初始化系统")
+    @Method(name="登陆")
     public String login(HttpServletRequest request, Model model){
         Map map=request.getParameterMap();
         Map <String,Object> params= new HashMap();
