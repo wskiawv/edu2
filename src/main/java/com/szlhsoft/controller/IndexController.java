@@ -25,6 +25,8 @@ public class IndexController extends BaseController {
     @GetMapping(value = {"/main", "main"})
     public String main(){
         LOGGER.info("main");
+        LOGGER.debug("debug main");
+        LOGGER.error("text");
         return "admin/main";
     }
 }
