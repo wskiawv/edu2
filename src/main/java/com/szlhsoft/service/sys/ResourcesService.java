@@ -192,6 +192,7 @@ public class ResourcesService implements ResourcesServiceI {
             resources.setModulesname(modulesName);
             resources.setCtl(parentResources.getCtl());
             resources.setXtype(parentResources.getXtype());
+            resources.setDisplay(false);
             if(m.containsKey("method") && m.get("method") !=null){
                 String url=parentResources.getCtl()+'.'+m.get("method").toString();
                 resources.setUrl(url);

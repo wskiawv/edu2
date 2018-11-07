@@ -1,8 +1,10 @@
-package com.szlhsoft.dao;
+package com.szlhsoft.dao.sys;
 
-import com.szlhsoft.model.FlatCode;
+import com.szlhsoft.core.dao.base.BaseDaoI;
+import com.szlhsoft.model.sys.FlatCode;
 
-public interface FlatCodeMapper {
+
+public interface FlatCodeDaoI extends BaseDaoI<FlatCode> {
     int deleteByPrimaryKey(Integer id);
 
     int insert(FlatCode record);

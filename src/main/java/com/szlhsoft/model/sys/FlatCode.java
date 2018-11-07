@@ -1,4 +1,4 @@
-package com.szlhsoft.model;
+package com.szlhsoft.model.sys;
 
 public class FlatCode {
     private Integer id;

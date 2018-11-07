@@ -137,6 +137,6 @@
         truncate t_resources
     </delete>
     <select id="select" parameterType="String" resultMap="Resources">
-        select * from t_resources where MODULES=#{name,jdbcType=VARCHAR} and METHODNAME is null
+        select * from t_resources where MODULES=#{name,jdbcType=VARCHAR} and METHODNAME is null and display=TRUE
     </select>
 </mapper>
