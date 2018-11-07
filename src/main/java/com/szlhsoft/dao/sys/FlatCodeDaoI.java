@@ -16,4 +16,5 @@ public interface FlatCodeDaoI extends BaseDaoI<FlatCode> {
     int updateByPrimaryKeySelective(FlatCode record);
 
     int updateByPrimaryKey(FlatCode record);
+
 }
