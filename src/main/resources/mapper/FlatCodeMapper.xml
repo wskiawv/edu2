@@ -22,6 +22,9 @@
     delete from t_flatcode
     where id = #{id,jdbcType=INTEGER}
   </delete>
+  <delete id="deleteAll">
+    truncate t_flatcode
+  </delete>
   <insert id="insert" parameterType="com.szlhsoft.model.sys.FlatCode" >
     insert into t_flatcode (id, category, categoryName, 
       code, description, name
