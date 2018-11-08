@@ -24,6 +24,6 @@
 		<menu text="角色资源管理" xtype="RoleResources" ctl="sys.RoleResourceses" display="true"/>
 		<menu text="用户角色" xtype="UserRole" ctl="sys.UserRoles" display="true"/>-->
 		<menu text="系统菜单管理" xtype="Menu" ctl="sys.Resourceses" display="true"/>
-		<menu text="系统代码管理" xtype="FlatCode" ctl="sys.Resourceses" display="true"/>
+		<menu text="系统代码管理" xtype="FlatCode" ctl="sys.FlatCodes" display="true"/>
 	</menu>
 </menus>

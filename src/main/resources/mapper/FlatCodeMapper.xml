@@ -109,4 +109,10 @@
       name = #{name,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="count" resultType="java.lang.Long" parameterType="java.util.HashMap">
+    select count(*) as num from t_flatcode
+  </select>
+  <select id="find" resultMap="FlatCode" parameterType="java.util.HashMap">
+    select * from t_flatcode LIMIT <![CDATA[#{start},#{limit}]]>
+  </select>
 </mapper>

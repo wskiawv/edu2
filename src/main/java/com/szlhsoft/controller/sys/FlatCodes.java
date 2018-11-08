@@ -2,6 +2,7 @@ package com.szlhsoft.controller.sys;
 
 import com.szlhsoft.core.annotation.Ctl;
 import com.szlhsoft.core.annotation.Method;
+import com.szlhsoft.core.controller.base.BaseController;
 import com.szlhsoft.core.model.Message;
 import com.szlhsoft.service.sys.FlatCodeServiceI;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
+
 @Controller
 @RequestMapping("/sys/FlatCodes")
 @Ctl(name="代码")
-public class FlatCodes {
+public class FlatCodes extends BaseController {
     @Autowired
     private FlatCodeServiceI flatCodeServiceI;
     @RequestMapping(value="/init", method={RequestMethod.GET,RequestMethod.POST})
@@ -34,5 +38,12 @@ public class FlatCodes {
         Message m = new Message();
         flatCodeServiceI.getFlatCode();
         return m;
+    }
+    @RequestMapping(value="/search", method=RequestMethod.GET)
+    @ResponseBody
+    @Method(name="查询")
+    public Object search(HttpServletRequest request){
+        Map<String,Object> params=super.getRequestParams(request);
+        return flatCodeServiceI.search(params);
     }
 }
